@@ -1,0 +1,11 @@
+com\frojasg1\general\desktop\image\processing\myradon\MyImageRadonTransform.class
+com\frojasg1\general\desktop\image\processing\myradon\image\BufferedImageToMyNormalizedImageConverter.class
+com\frojasg1\general\desktop\image\processing\perspective\PerspectiveTransformProcessor.class
+com\frojasg1\general\desktop\image\processing\myradon\pixel\MyRadonPixelTransformation$RadianRangeLineIterator.class
+com\frojasg1\general\desktop\image\processing\myradon\pixel\MyPixelRadonContext.class
+com\frojasg1\general\desktop\image\processing\myradon\image\helper\MyNormalizedImageFunctions.class
+com\frojasg1\general\desktop\image\processing\myradon\pixel\MyRadonPixelTransformation.class
+com\frojasg1\general\desktop\image\processing\myradon\configuration\MyRadonTransformationConf.class
+com\frojasg1\general\desktop\image\processing\myradon\image\MyNormalizedImage.class
+com\frojasg1\general\desktop\image\processing\myradon\helpers\BoundingBoxIntersectionCalculator.class
+com\frojasg1\general\desktop\image\processing\myradon\helpers\LinePixelsBrowser.class
