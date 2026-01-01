@@ -8,6 +8,8 @@ Java 8
 
 The library is self-contained
 
+Note: For being able to execute the example, you will need to execute it with, at least, java 11 jvm (for being able to load the tiff image)
+
 ## Background
 
 You can see some details of Radon transform at the Wikipedia
