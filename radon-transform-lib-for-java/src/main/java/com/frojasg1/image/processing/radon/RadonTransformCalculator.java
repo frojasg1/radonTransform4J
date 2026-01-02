@@ -291,11 +291,6 @@ public class RadonTransformCalculator {
                                 endPoint.getIntX(), endPoint.getIntY(),
                                 integrationContext::processPixel);
 
-                if (startPoint.y == 484.0d && endPoint.y == 484.0d) {
-//                if (startPoint.x == 2.0d && startPoint.y == 33.0d && endPoint.x == 489.0d && endPoint.y == 33.0d) {
-                    int kk = 0;
-                }
-
                 Point2d rhoTheta = calculateRhoTheta(startPoint, endPoint);
 
                 result.set(rhoTheta.x, rhoTheta.y, integrationContext.getAccumulation(), integrationContext.getCount());

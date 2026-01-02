@@ -181,15 +181,6 @@ public class RadonTransformResult {
         Integer rhoIndex = calculateRhoIndex(rho);
         int thetaIndex = calculateThetaIndex(theta);
 
-        if (accumulation > 275.0d) {
-            int kk = 0;
-        }
-
-        if (rhoIndex == 600 && thetaIndex == 360) {
-//        if ((rhoIndex > 610 || rho > 246.0d) && Math.abs(theta) < 0.02d) {
-            int kk = 0;
-        }
-
         radonTransform.set(rhoIndex, thetaIndex, accumulation);
         if (count > 0) {
             normalizedRadonTransform.set(rhoIndex, thetaIndex, accumulation / count);

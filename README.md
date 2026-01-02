@@ -19,16 +19,18 @@ https://en.wikipedia.org/wiki/Radon_transform
 
 ## Description of the library
 
+(ρ, θ) - (Rho, Theta)
+
 The radon transformation is calculated by integrating every line in the image, and then calculating
-their (rho, theta) pair from the image center, and setting them into a bidimensional array.
+their (ρ, θ) pair from the image center, and setting them into a bidimensional array.
 
 You can use multithreading by passing a Consumer< Runnable > to the Radon transform calculator.
 
 Once it is computed, you can get the N highest values.
 
-You can avoid duplicates (close (Rho, Theta) pairs, which might refer to the same line) by setting the max delta for considering distinct (rho, theta) pairs to be the same line.
+You can avoid duplicates (close (ρ, θ) pairs, which might refer to the same line) by setting the max delta for considering distinct (ρ, θ) pairs to be the same line.
 
-You can also filter by (rho, theta) conditions, as for instance, for filtering a specific angle range via a lambda,
+You can also filter by (ρ, θ) conditions, as for instance, for filtering a specific angle range via a lambda,
 which you can pass to the highest values getter.
 
 ## Example
@@ -41,9 +43,9 @@ Once it is finished to be computed, we will look for the four highest values.
 
 A max delta for considering the same line is set to 2 for Rho, and 1º for Theta.
 
-(Rho, Theta) pairs are then filtered for being less than 10º from the horizontal or the vertical.
+(ρ, θ) pairs are then filtered for being less than 10º from the horizontal or the vertical.
 
-Once we have the highest four (Rho, Theta) pairs, we will calculate the four vertices (those four line intersections).
+Once we have the highest four (ρ, θ) pairs, we will calculate the four vertices (those four line intersections).
 
 Then we will put them in the order for building a convex polygon (a square, in this case).
 
@@ -77,7 +79,7 @@ With that result (RadonTransformResult), you will be able to browse the values o
 
 * result.getRadonTransform(). Radon transform container
 * result.getStandardizedRadonTransform(). Radon transform but applying a factor so that the maximum is 1.0d
-* result.getNormalizedRadonTransform(). Variant of radon transform, but instead of the accumulated value, it holds the average of the luminance for every pair (Rho, Theta).
+* result.getNormalizedRadonTransform(). Variant of radon transform, but instead of the accumulated value, it holds the average of the luminance for every pair (ρ, θ).
 
 They are instances of **My2dContainer**
 
@@ -85,7 +87,7 @@ They are instances of **My2dContainer**
 
 All values of those containers are initialized to -1.0d, in order to identify the values that have not been calculated.
 
-Some values of the containers have never been set, as the nature of (Rho, Theta) related to Cartesian coordinates, makes they not be uniformly sampled during the calculation, and there are some combinations that have never been calculated because they have not any line in the image that coincides with that (Rho, Theta) value.
+Some values of the containers have never been set, as the nature of (ρ, θ) related to Cartesian coordinates, makes they not be uniformly sampled during the calculation, and there are some combinations that have never been calculated because they have not any line in the image that coincides with that (ρ, θ) value.
 
 (I mean every line segment with their limits inside the image)
 
@@ -119,7 +121,7 @@ Those indices can be translated into Rho and Theta real values, by using the fun
     public Point2d indexToRhoTheta(int rhoIndex, int thetaIndex)
 ```
 
-Each such Point2d is a (Rho, Theta) pair
+Each such Point2d is a (ρ, θ) pair
 
 * Rho. (associated with the x coordinate in the library). Is the distance to the center (it is signed) (negative y deltas, result in a negative Rho).
 * Theta. (associated with the y coordinate in the library). Is the angle (orthogonal to the line it represents)
@@ -128,7 +130,7 @@ Each such Point2d is a (Rho, Theta) pair
 
 
 
-In order to build a line from its (Rho, Theta) pair, you will need to know the center from which that (Rho, Theta) pair has been calculated.
+In order to build a line from its (ρ, θ) pair, you will need to know the center from which that (ρ, θ) pair has been calculated.
 
 That center, is the center of the image, and you can get it this way:
 
